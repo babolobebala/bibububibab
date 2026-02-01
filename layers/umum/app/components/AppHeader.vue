@@ -1,17 +1,20 @@
 <script setup lang="ts">
+import SVGLogo from './SVGLogo.vue'
+import SVGText from './SVGText.vue'
+
 const nuxtApp = useNuxtApp()
 const { activeHeadings, updateHeadings } = useScrollspy()
 
 const items = computed(() => [{
-  label: 'Features',
+  label: 'Layanan BPS',
   to: '#features',
   active: activeHeadings.value.includes('features') && !activeHeadings.value.includes('pricing')
 }, {
-  label: 'Pricing',
+  label: 'Data Strategis',
   to: '#pricing',
   active: activeHeadings.value.includes('pricing')
 }, {
-  label: 'Testimonials',
+  label: 'Portal Pengaduan',
   to: '#testimonials',
   active: activeHeadings.value.includes('testimonials') && !activeHeadings.value.includes('pricing')
 }])
@@ -28,11 +31,13 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
 <template>
   <UHeader>
     <template #left>
-      <NuxtLink to="/">
-        <AppLogo class="w-auto h-6 shrink-0" />
+      <NuxtLink
+        to="/"
+        class="flex"
+      >
+        <SVGLogo class="w-auto h-10" />
+        <SVGText class="w-auto h-10" />
       </NuxtLink>
-
-      <TemplateMenu />
     </template>
 
     <template #right>
@@ -43,9 +48,9 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
       />
 
       <UButton
-        label="Download App"
+        label="Login SAKU"
         variant="subtle"
-        class="hidden lg:block"
+        class="hidden lg:block cursor-pointer"
       />
 
       <UColorModeButton />
@@ -59,7 +64,7 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
       />
       <UButton
         class="mt-4"
-        label="Download App"
+        label="Login SAKU"
         variant="subtle"
         block
       />

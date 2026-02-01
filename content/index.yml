@@ -1,18 +1,25 @@
 seo:
-  title: Nuxt Landing Template
-  description: Boost your coding productivity with AI-driven insights that tell you when and how to code most efficiently.
-title: AI-Powered Developer Productivity Platform
-description: Boost your coding productivity with AI-driven insights that tell you when and how to code most efficiently.
+  title: SAKU - BPS Kabupaten Sumbawa Barat
+  description: Satu Aplikasi untuk Kinerja Unggul yang dimiliki oleh BPS Kabupaten Sumbawa Barat
+title: SAKU - BPS Kabupaten Sumbawa Barat
+description: Satu Aplikasi untuk Kinerja Unggul yang dimiliki oleh BPS Kabupaten Sumbawa Barat
 hero:
   links:
-    - label: Get started
+    - label: Layanan BPS
       icon: i-lucide-arrow-right
       trailing: true
       color: primary
       to: https://ui.nuxt.com/docs/getting-started/installation/nuxt
       target: _blank
       size: xl
-    - label: Clone on GitHub
+    - label: Data Strategis Daerah
+      icon: i-simple-icons-github
+      size: xl
+      color: neutral
+      variant: outline
+      to: https://github.com/nuxt-ui-templates/landing
+      target: _blank
+    - label: Portal Pengaduan
       icon: i-simple-icons-github
       size: xl
       color: neutral
@@ -20,11 +27,11 @@ hero:
       to: https://github.com/nuxt-ui-templates/landing
       target: _blank
 section:
-  title: '[Revolutionize]{.text-primary} your coding experience'
+  title: "[Revolutionize]{.text-primary} your coding experience"
   description: Transform your development workflow with AI-powered insights and personalized productivity optimization.
   images:
-    mobile: '/images/macbook-mobile.svg'
-    desktop: '/images/macbook.svg'
+    mobile: "/images/macbook-mobile.svg"
+    desktop: "/images/macbook.svg"
   features:
     - title: Optimize your focus time
       description: Let AI identify your peak coding hours and adapt to your natural rhythm. Focus on what matters most - writing great code, while our system optimizes your productivity patterns.
@@ -76,18 +83,18 @@ steps:
     - title: Connect Your IDE
       description: Seamlessly integrate with VS Code, JetBrains, or your preferred editor. Get started in under 2 minutes with zero configuration needed.
       image:
-        light: '/images/light/connect.svg'
-        dark: '/images/dark/connect.svg'
+        light: "/images/light/connect.svg"
+        dark: "/images/dark/connect.svg"
     - title: Track & Analyze
       description: Our AI silently monitors your coding patterns to identify your peak productivity hours and potential workflow bottlenecks.
       image:
-        light: '/images/light/optimize.svg'
-        dark: '/images/dark/optimize.svg'
+        light: "/images/light/optimize.svg"
+        dark: "/images/dark/optimize.svg"
     - title: Optimize & Code Smarter
       description: Receive personalized recommendations to enhance your coding efficiency. Watch your productivity soar with data-driven insights.
       image:
-        light: '/images/light/track.svg'
-        dark: '/images/dark/track.svg'
+        light: "/images/light/track.svg"
+        dark: "/images/dark/track.svg"
 pricing:
   title: Choose your [productivity]{.text-primary} path
   description: Unlock AI-powered coding efficiency with our flexible plans. Whether you're a solo developer or part of a team, we have the perfect toolset to maximize your development workflow.
@@ -106,7 +113,7 @@ pricing:
         label: Buy now
         color: neutral
         variant: outline
-        to: '#'
+        to: "#"
     - title: Team Developer
       description: For bootstrappers and indie hackers.
       price: $199
@@ -120,42 +127,42 @@ pricing:
       button:
         label: Buy now
         variant: subtle
-        to: '#'
+        to: "#"
 testimonials:
   title: Join thousands of productive [developers]{.text-primary}
   description: See how developers are transforming their coding workflow and achieving more with our AI-powered platform.
   items:
     - quote: Since using this tool, my productivity has doubled. The AI insights helped me find my perfect coding rhythm and now I ship features twice as fast.
       user:
-        name: 'Sarah Moriceau'
-        description: 'Brand Designer'
+        name: "Sarah Moriceau"
+        description: "Brand Designer"
         target: _blank
         avatar:
-          src: 'https://ipx.nuxt.com/f_auto,s_192x192/gh_avatar/SarahM19'
+          src: "https://ipx.nuxt.com/f_auto,s_192x192/gh_avatar/SarahM19"
     - quote: Game-changer for our team. The focus tracking and smart alerts helped us reduce meeting interruptions by 40% and increased our sprint velocity.
       user:
-        name: 'Sébastien Chopin'
-        description:  'Lead Software Engineer'
+        name: "Sébastien Chopin"
+        description: "Lead Software Engineer"
         target: _blank
         avatar:
-          src: 'https://ipx.nuxt.com/f_auto,s_192x192/gh_avatar/atinux'
+          src: "https://ipx.nuxt.com/f_auto,s_192x192/gh_avatar/atinux"
     - quote: Finally, a productivity tool that understands developers. The AI features helped me identify my peak coding hours and now I accomplish more in less time.
       user:
-        name: 'Benjamin Canac'
-        description:  'Senior Frontend Developer'
+        name: "Benjamin Canac"
+        description: "Senior Frontend Developer"
         target: _blank
         avatar:
-          src: 'https://ipx.nuxt.com/f_auto,s_192x192/gh_avatar/benjamincanac'
+          src: "https://ipx.nuxt.com/f_auto,s_192x192/gh_avatar/benjamincanac"
 cta:
   title: Ready to build an amazing landing page?
   description: Join thousands of developers building with Nuxt and Nuxt UI. Get this template and start shipping today.
   links:
     - label: Start building
-      to: 'https://ui.nuxt.com/docs/getting-started/installation/nuxt'
+      to: "https://ui.nuxt.com/docs/getting-started/installation/nuxt"
       target: _blank
       trailingIcon: i-lucide-arrow-right
     - label: View on GitHub
-      to: 'https://github.com/nuxt-ui-templates/landing'
+      to: "https://github.com/nuxt-ui-templates/landing"
       target: _blank
       variant: subtle
       icon: i-simple-icons-github

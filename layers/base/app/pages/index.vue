@@ -21,7 +21,7 @@ useSeoMeta({
       <UColorModeImage
         light="/images/light/line-1.svg"
         dark="/images/dark/line-1.svg"
-        class="absolute pointer-events-none pb-10 left-0 top-0 object-cover h-[650px]"
+        class="absolute pointer-events-none pb-10 left-0 top-0 object-cover h-162.5 opacity-20"
       />
     </div>
 
@@ -85,8 +85,8 @@ useSeoMeta({
       }"
       class="relative overflow-hidden"
     >
-      <div class="absolute rounded-full -left-10 top-10 size-[300px] z-10 bg-primary opacity-30 blur-[200px]" />
-      <div class="absolute rounded-full -right-10 -bottom-10 size-[300px] z-10 bg-primary opacity-30 blur-[200px]" />
+      <div class="absolute rounded-full -left-10 top-10 size-75 z-10 bg-primary opacity-30 blur-[200px]" />
+      <div class="absolute rounded-full -right-10 -bottom-10 size-75 z-10 bg-primary opacity-30 blur-[200px]" />
       <template #title>
         <MDC
           :value="page.features.title"
@@ -96,7 +96,7 @@ useSeoMeta({
           <UColorModeImage
             light="/images/light/line-2.svg"
             dark="/images/dark/line-2.svg"
-            class="absolute top-0 right-0 size-full transform scale-95 translate-x-[70%]"
+            class=" top-0 absolute right-0 size-full opacity-20 transform scale-125 translate-x-[45%]"
           />
         </div>
       </template>
@@ -113,7 +113,7 @@ useSeoMeta({
         <UColorModeImage
           light="/images/light/line-3.svg"
           dark="/images/dark/line-3.svg"
-          class="absolute -top-10 sm:top-0 right-1/2 h-24"
+          class="absolute -top-10 sm:top-0 right-2/5 h-24 opacity-20 scale-125"
         />
       </template>
       <template #title>
@@ -161,7 +161,7 @@ useSeoMeta({
           <UColorModeImage
             light="/images/light/line-4.svg"
             dark="/images/dark/line-4.svg"
-            class="absolute top-0 right-0 size-full transform translate-x-[60%]"
+            class="top-0 absolute right-0 size-full opacity-20 transform scale-125 translate-x-[45%]"
           />
         </div>
       </template>
@@ -194,7 +194,7 @@ useSeoMeta({
         <UColorModeImage
           light="/images/light/line-5.svg"
           dark="/images/dark/line-5.svg"
-          class="absolute -top-10 sm:top-0 right-1/2 h-24"
+          class="absolute -top-10 sm:top-0 right-2/6 scale-125 h-24 opacity-20"
         />
       </template>
       <template #title>
@@ -231,21 +231,66 @@ useSeoMeta({
       <template #title>
         <MDC :value="page.cta.title" />
 
-        <div class="@max-[1280px]:hidden">
+        <div class="@max-[1080px]:hidden">
           <UColorModeImage
             light="/images/light/line-6.svg"
             dark="/images/dark/line-6.svg"
-            class="absolute left-10 -top-10 sm:top-0 h-full"
-          />
-          <UColorModeImage
-            light="/images/light/line-7.svg"
-            dark="/images/dark/line-7.svg"
-            class="absolute right-0 bottom-0 h-full"
+            class="absolute left-2/5 bottom-0 h-full opacity-10 scale-150"
           />
         </div>
       </template>
 
       <LazyStarsBg />
     </UPageCTA>
+  </div>
+
+  <div
+    v-else
+    class="relative"
+  >
+    <div class="animate-pulse">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 pt-16 pb-10">
+        <div class="h-6 w-32 rounded bg-muted" />
+        <div class="mt-6 space-y-4">
+          <div class="h-10 w-4/5 rounded bg-muted" />
+          <div class="h-10 w-3/5 rounded bg-muted" />
+          <div class="h-5 w-2/3 rounded bg-muted/70" />
+        </div>
+        <div class="mt-8 flex gap-3">
+          <div class="h-10 w-32 rounded bg-muted" />
+          <div class="h-10 w-28 rounded bg-muted/70" />
+        </div>
+      </div>
+
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+        <div class="grid gap-6 lg:grid-cols-2">
+          <div class="space-y-3">
+            <div class="h-6 w-40 rounded bg-muted" />
+            <div class="h-8 w-3/4 rounded bg-muted" />
+            <div class="h-5 w-2/3 rounded bg-muted/70" />
+            <div class="h-5 w-1/2 rounded bg-muted/70" />
+          </div>
+          <div class="h-64 w-full rounded-xl bg-muted/70" />
+        </div>
+      </div>
+
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+        <div class="h-6 w-36 rounded bg-muted" />
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div class="h-40 rounded-xl bg-muted/70" />
+          <div class="h-40 rounded-xl bg-muted/70" />
+          <div class="h-40 rounded-xl bg-muted/70" />
+        </div>
+      </div>
+
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+        <div class="h-6 w-32 rounded bg-muted" />
+        <div class="mt-6 grid gap-4 md:grid-cols-3">
+          <div class="h-56 rounded-2xl bg-muted/70" />
+          <div class="h-56 rounded-2xl bg-muted/70" />
+          <div class="h-56 rounded-2xl bg-muted/70" />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
