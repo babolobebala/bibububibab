@@ -85,7 +85,7 @@ export default defineNuxtConfig({
     workbox: {
       runtimeCaching: [
         {
-          urlPattern: 'http://localhost:3000/.*',
+          urlPattern: 'https://suka.bpsksb.id/.*',
           handler: 'NetworkFirst',
           options: {
             cacheName: 'api-cache',

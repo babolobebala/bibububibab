@@ -1,4 +1,4 @@
-name: deploy to cPanel (FTP)
+name: deploy nuxt ssr to cpanel
 
 on:
   push:
@@ -7,6 +7,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,20 +21,29 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Generate static
-        run: npx nuxi generate
+      - name: Build (Nuxt SSR)
+        run: npx nuxi build
 
-      - name: Show generated files
+      - name: Show output (debug)
         run: |
-          echo "=== .output/public ==="
-          ls -la .output/public | head -n 80
+          echo "=== .output ==="
+          ls -la .output
+          echo "=== server entry ==="
+          ls -la .output/server | head -n 50
 
-      - name: FTP Deploy
+      - name: FTP Deploy (SSR build)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: .output/public/
+          local-dir: ./
           server-dir: ${{ secrets.FTP_TARGET }}
-          dangerous-clean-slate: true
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.github/**
+            **/node_modules/**
+            **/.nuxt/**
+            **/.output/cache/**
+            **/.output/public/_nuxt/*.map
