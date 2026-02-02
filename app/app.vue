@@ -1,32 +1,56 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
 const route = useRoute()
+const toast = useToast()
 
 const color = computed(() => colorMode.value === 'dark' ? '#171717' : 'white')
 const ssoStatus = computed(() => route.query.sso)
 const ssoReason = computed(() => route.query.reason)
 const ssoAlert = computed(() => {
   if (ssoStatus.value === 'success') {
-    return { color: 'green', title: 'Login SSO berhasil.' }
+    return { color: 'success' as const, title: 'Login SSO berhasil.' }
   }
   if (ssoStatus.value === 'error') {
     if (ssoReason.value === 'satker') {
       return {
-        color: 'red',
-        title: 'Akses ditolak.',
+        color: 'error' as const,
+        title: 'Gagal Login: Akses Ditolak.',
         description: 'Aplikasi ini hanya untuk pegawai BPS sesuai satker yang diizinkan.'
       }
     }
     if (ssoReason.value === 'invalid_state') {
-      return { color: 'red', title: 'State login tidak valid. Silakan coba lagi.' }
+      return { color: 'error' as const,
+        title: 'Gagal Login.',
+        description: 'invalid_state' }
     }
     if (ssoReason.value === 'token_missing') {
-      return { color: 'red', title: 'Token tidak ditemukan. Silakan login ulang.' }
+      return { color: 'error' as const,
+        title: 'Gagal Login.',
+        description: 'token_missing' }
     }
-    return { color: 'red', title: 'Login SSO gagal. Silakan coba lagi.' }
+    return { color: 'error' as const,
+      title: 'Gagal Login SSO.',
+      description: '' }
   }
   return null
 })
+
+watch(
+  () => route.query.sso,
+  () => {
+    if (!import.meta.client) return
+    if (!ssoAlert.value) return
+
+    toast.add({
+      title: ssoAlert.value.title,
+      description: ssoAlert.value.description,
+      icon: 'i-lucide-key-round',
+      color: ssoAlert.value.color,
+      duration: 6000
+    })
+  },
+  { immediate: true }
+)
 
 useHead({
   meta: [
@@ -61,17 +85,6 @@ useSeoMeta({
     <AppHeader />
 
     <UMain>
-      <UContainer
-        v-if="ssoAlert"
-        class="pt-6"
-      >
-        <UAlert
-          :color="ssoAlert.color"
-          variant="soft"
-          :title="ssoAlert.title"
-          :description="ssoAlert.description"
-        />
-      </UContainer>
       <NuxtPage />
     </UMain>
 
