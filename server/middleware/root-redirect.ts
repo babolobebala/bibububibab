@@ -1,3 +1,4 @@
+/* eslint-disable import/no-duplicates */
 import { getCookie, sendRedirect } from 'h3'
 import { getBpsConfig } from '../utils/bps-sso'
 import { getRequestURL } from 'h3'

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { deleteCookie, getCookie, getQuery, sendRedirect, setCookie } from 'h3'
 import { getBpsConfig, getBpsEndpoints, getSatkerCode, mapBpsUser } from './bps-sso'
 
@@ -17,7 +18,6 @@ export const handleBpsCallback = async (event: any) => {
     return sendRedirect(event, '/landing-page?sso=error&reason=invalid_state')
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const tokenResponse = await $fetch<Record<string, any>>(endpoints.token, {
     method: 'POST',
     headers: {
@@ -37,7 +37,6 @@ export const handleBpsCallback = async (event: any) => {
     return sendRedirect(event, '/landing-page?sso=error&reason=token_missing')
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const rawProfile = await $fetch<Record<string, any>>(endpoints.userinfo, {
     headers: {
       Authorization: `Bearer ${accessToken}`
