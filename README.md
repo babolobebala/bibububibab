@@ -2,6 +2,7 @@
 
 [![Nuxt UI](https://img.shields.io/badge/Made%20with-Nuxt%20UI-00DC82?logo=nuxt&labelColor=020420)](https://ui.nuxt.com)
 
+KONZZ
 Use this template to build your own landing page with [Nuxt UI](https://ui.nuxt.com) quickly.
 
 - [Live demo](https://landing-template.nuxt.dev/)
