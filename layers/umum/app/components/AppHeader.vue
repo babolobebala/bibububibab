@@ -53,7 +53,7 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
         class="hidden lg:block cursor-pointer"
       />
 
-      <UColorModeButton />
+      <UColorModeButton class="cursor-pointer" />
     </template>
 
     <template #body>

@@ -1,5 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      keyApi: process.env.KEYAPI
+    }
+  },
+
   modules: [
     '@nuxt/eslint',
     '@nuxt/image',
