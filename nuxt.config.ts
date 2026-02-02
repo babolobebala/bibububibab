@@ -1,5 +1,31 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+
+  modules: [
+    '@nuxt/eslint',
+    '@nuxt/image',
+    '@nuxt/ui',
+    '@nuxt/content',
+    '@vite-pwa/nuxt'
+  ],
+
+  devtools: {
+    enabled: true
+  },
+
+  css: ['~/assets/css/main.css'],
+
+  colorMode: {
+    preference: 'light',
+    fallback: 'light',
+    classSuffix: ''
+  },
+
+  mdc: {
+    highlight: {
+      noApiRoute: false
+    }
+  },
   runtimeConfig: {
     bps: {
       authUrl: process.env.BPS_AUTH_URL,
@@ -14,31 +40,6 @@ export default defineNuxtConfig({
     },
     public: {
       keyApi: process.env.KEYAPI
-    }
-  },
-
-  modules: [
-    '@nuxt/eslint',
-    '@nuxt/image',
-    '@nuxt/ui',
-    '@nuxt/content'
-  ],
-
-  devtools: {
-    enabled: true
-  },
-
-  colorMode: {
-    preference: 'light',
-    fallback: 'light',
-    classSuffix: ''
-  },
-
-  css: ['~/assets/css/main.css'],
-
-  mdc: {
-    highlight: {
-      noApiRoute: false
     }
   },
 
@@ -58,6 +59,43 @@ export default defineNuxtConfig({
         commaDangle: 'never',
         braceStyle: '1tbs'
       }
+    }
+  },
+
+  pwa: {
+    registerType: 'autoUpdate',
+    manifest: {
+      name: 'SAKU BPS KSB',
+      short_name: 'SAKU',
+      description: 'Satu Aplikasi untuk Kinerja Unggul',
+      theme_color: '#4A90E2',
+      icons: [
+        {
+          src: '/pwa-192.png',
+          sizes: '192x192',
+          type: 'image/png'
+        },
+        {
+          src: '/pwa-512.png',
+          sizes: '512x512',
+          type: 'image/png'
+        }
+      ]
+    },
+    workbox: {
+      runtimeCaching: [
+        {
+          urlPattern: 'http://localhost:3000/.*',
+          handler: 'NetworkFirst',
+          options: {
+            cacheName: 'api-cache',
+            expiration: {
+              maxEntries: 50,
+              maxAgeSeconds: 86400
+            }
+          }
+        }
+      ]
     }
   }
 })
