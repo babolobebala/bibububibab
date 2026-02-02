@@ -7,7 +7,6 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -21,10 +20,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build static
-        run: npm run generate
+      - name: Generate static
+        run: npx nuxi generate
 
-      # Upload hasil generate ke cPanel
+      - name: Show generated files
+        run: |
+          echo "=== .output/public ==="
+          ls -la .output/public | head -n 80
+
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
