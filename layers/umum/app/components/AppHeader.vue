@@ -51,6 +51,8 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
         label="Login SAKU"
         variant="subtle"
         class="hidden lg:block cursor-pointer"
+        to="/api/auth/login"
+        external
       />
 
       <UColorModeButton class="cursor-pointer" />
@@ -67,6 +69,8 @@ nuxtApp.hooks.hookOnce('page:finish', () => {
         label="Login SAKU"
         variant="subtle"
         block
+        to="/api/auth/login"
+        external
       />
     </template>
   </UHeader>
