@@ -36,9 +36,9 @@ npm install
 
 ## Development Server
 
-Start the development server ai on `http://localhost:3000`:
+Start the development  server ai on `http://localhost:3000`:
 
-```bash
+```bash  
 npm dev
 ```
 
